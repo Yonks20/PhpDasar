@@ -1,16 +1,19 @@
 <?php
 //koneksi ke DBMS
+require 'functions.php';
 
 //cek apakah tombol submit udah ditekan atau belum
 if( isset($_POST['submit'])) {
 
+    // var_dump($_POST);
+    // var_dump($_FILES); die;
+
 //hubungkan ke function tambah
-require 'functions.php';
 
     //query insert data
     // $query = "INSERT INTO mahasiswa
     // VALUES
-    // ('','$nip','$name','$email','$jurusan','$gambar')";
+    // ('','$nip','$nama','$email','$jurusan','$gambar')";
 
     //cek apakah data berhasil ditambahkan atau tidak?
 
@@ -42,21 +45,21 @@ if(tambah($_POST)>0){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta nama="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah data mahasiswa</title>
 </head>
 <body>
     <h1>Tambah data mahasiswa</h1>
 
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <ul>
             <li>
                 <label for="nip">NIP :</label>
                 <input type="text" name="nip" id="nip" required >
             </li>
             <li>
-                <label for="name">Nama :</label>
-                <input type="text" name="name" id="name" required >
+                <label for="nama">Nama :</label>
+                <input type="text" name="nama" id="nama" required >
             </li>
             <li>
                 <label for="email">Email :</label>
@@ -68,7 +71,7 @@ if(tambah($_POST)>0){
             </li>
             <li>
                 <label for="gambar">Gambar :</label>
-                <input type="text" name="gambar" id="gambar">
+                <input type="file" name="gambar" id="gambar">
             </li>
             <li>
                 <button type="submit" name="submit">Sign Up</button>

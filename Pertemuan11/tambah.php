@@ -1,11 +1,11 @@
 <?php
 //koneksi ke DBMS
+require 'functions.php';
 
 //cek apakah tombol submit udah ditekan atau belum
 if( isset($_POST['submit'])) {
 
 //hubungkan ke function tambah
-require 'functions.php';
 
     //query insert data
     // $query = "INSERT INTO mahasiswa
