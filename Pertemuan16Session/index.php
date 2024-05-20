@@ -1,8 +1,8 @@
 <?php
-//cek session
-session_start();
 
-if( !isset($_SESSION["login"])){
+// Logicnya jika tidak ada session login, maka tendang atau tidak login, jadi terbatas jika mau ke index.php maka harus melewati login.php
+session_start();
+if(!isset($_SESSION["login"])){
   header("Location: login.php");
   exit;
 }
@@ -28,13 +28,12 @@ if(isset($_POST["cari"])) {
   </head>
 
   <body>
-
-<a href="logout.php">logout</a>
-
+    <a href="logout.php">Logout</a>
     <h1>Daftar Mahasiswa</h1>
 
+
     <a href="tambah.php">Tambah Data Mahasiswa</a>
-    
+    <br><br>
 <form action="" method="post">
   <input type="text" name="keyword" size = "30" autofocus
   placeholder="Cari data mahasiswa.." autocomplete="off" />

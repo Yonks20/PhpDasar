@@ -1,7 +1,7 @@
 <?php
+// Logicnya jika tidak ada session login, maka tendang atau tidak login, jadi terbatas jika mau ke index.php maka harus melewati login.php
 session_start();
-
-if( !isset($_SESSION["login"])){
+if(!isset($_SESSION["login"])){
   header("Location: login.php");
   exit;
 }
