@@ -64,8 +64,8 @@ if(isset($_POST["cari"])) {
 <form action="" method="post">
 
   <input type="text" name="keyword" size = "30" autofocus
-  placeholder="Cari data mahasiswa.." autocomplete="off" />
-  <button type="submit" name= "cari" >cari</button>
+  placeholder="Cari data mahasiswa.." autocomplete="off" id="keyword" />
+  <button type="submit" name= "cari" id="tombol-cari" >cari</button>
 
 </form>
 
@@ -96,6 +96,7 @@ if(isset($_POST["cari"])) {
 <?php endif;?>
 
 <br>
+<div id="container" >
     <table border="1" cellpadding="10" cellspacing="0">
       <tr>
         <th>No</th>
@@ -125,6 +126,8 @@ if(isset($_POST["cari"])) {
       <?php endforeach; ?>
 
     </table>
+    </div>
+    <script src="js/script.js" ></script>
   </body>
 </html>
 
